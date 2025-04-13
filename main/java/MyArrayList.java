@@ -15,7 +15,6 @@ public class MyArrayList<T extends Comparable<T>> implements MyList<T> {
             grow();
         }
         array[size++] = item;
-        size++;
     }
 
     public void set(int index, T item){

@@ -25,7 +25,7 @@ public class MyMinHeap <T extends Comparable<T>> {
         int index = list.size()-1;
         while (index > 0){
             int paternIndex = (index - 1) / 2;
-            if (list.get(paternIndex).compareTo(list.get(index)) < 0) {
+            if (list.get(paternIndex).compareTo(list.get(index)) > 0) {
                 swap(index, paternIndex);
                 index = paternIndex;
             } else {
@@ -39,10 +39,10 @@ public class MyMinHeap <T extends Comparable<T>> {
             int leftChild = 2 * index + 1;
             int rightChild = 2 * index + 2;
             int smallest = index;
-            if (leftChild < list.size() && list.get(leftChild).compareTo(list.get(index)) < 0) {
+            if (leftChild < list.size() && list.get(leftChild).compareTo(list.get(smallest)) < 0) {
                 smallest = leftChild;
             }
-            if (rightChild < list.size() && list.get(rightChild).compareTo(list.get(index)) < 0) {
+            if (rightChild < list.size() && list.get(rightChild).compareTo(list.get(smallest)) < 0) {
                 smallest = rightChild;
             }
             if (smallest == index) break;
